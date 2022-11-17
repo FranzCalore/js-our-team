@@ -28,6 +28,31 @@ let ourTeam = [
         Name: "Barbara Ramos",
         Role: "Graphic Designer",
         Image: "barbara-ramos-graphic-designer.jpg",
-    },
-]
+    }
+];
 
+for (memberTeam of ourTeam){
+    stampaScheda(memberTeam);
+}
+
+
+
+
+
+
+
+
+
+
+function stampaScheda(memberTeam){
+    console.log(`
+    
+----------- ${memberTeam.Name} -----------
+
+Role: ${memberTeam.Role}
+
+Image: ${memberTeam.Image}
+
+-------------------------------------
+    `)
+}

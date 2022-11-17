@@ -1,3 +1,8 @@
+//Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
+//Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
+
+//MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
+
 let ourTeam = [
     {
         Name: "Wayne Barnett",
@@ -31,18 +36,22 @@ let ourTeam = [
     }
 ];
 
+//MILESTONE 1: Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+
 for (memberTeam of ourTeam){
     stampaScheda(memberTeam);
+
 }
 
 
+let Role= memberTeam.Role
+Role.replace(" ", "-")
 
 
 
 
 
-
-
+// -----------Funzioni------------------------
 
 function stampaScheda(memberTeam){
     console.log(`
@@ -55,4 +64,13 @@ Image: ${memberTeam.Image}
 
 -------------------------------------
     `)
+}
+
+function imagePath(memberTeam){
+    let role= memberTeam.Role
+    role = role.replace(/[^A-Z0-9]/ig, "-");
+    role = role.replace("---", "-")
+    let name = memberTeam.Name
+    name = name.replace (" ", "-")
+    return stringaImg=".img/"+name+role+".jpg"
 }

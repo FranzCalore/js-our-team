@@ -43,12 +43,20 @@ for (memberTeam of ourTeam){
 
 }
 
+//Procedo ad affrontare MILESTONE 2 e Bonus insieme: Stamperò nell'Html le schede del team sotto forma di cards con immagini
 
-let Role= memberTeam.Role
-Role.replace(" ", "-")
+for (memberTeam of ourTeam){
+    document.getElementById("teamCardsContainer").innerHTML+=`
+<div class="col-12 col-md-6 col-lg-3 m-2 bg-white pt-3">
+  <img src=${imagePath(memberTeam)} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${memberTeam.Name}</h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${memberTeam.Role}</li>
+  </ul>
+</div>`
 
-
-
+}
 
 
 // -----------Funzioni------------------------
@@ -72,5 +80,5 @@ function imagePath(memberTeam){
     role = role.replace("---", "-")
     let name = memberTeam.Name
     name = name.replace (" ", "-")
-    return stringaImg=".img/"+name+role+".jpg"
+    return stringaImg="img/"+name+"-"+role+".jpg"
 }

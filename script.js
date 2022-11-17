@@ -74,6 +74,8 @@ Image: ${memberTeam.Image}
     `)
 }
 
+//Creata una funziona di imagePath che ricavi autonomamente l'indirizzo dell'immagine, se nominata secondo la formula Name-Role.jpg
+
 function imagePath(memberTeam){
     let role= memberTeam.Role
     role = role.replace(/[^A-Z0-9]/ig, "-");
